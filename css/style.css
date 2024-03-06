@@ -221,6 +221,7 @@ body {
   .header-main768 {
     display: flex;
   }
+  
 }
 @media (max-width: 767px) {
   .header-main {
@@ -1348,6 +1349,8 @@ body {
     letter-spacing: 0.24px;
     width: 12.1275rem;
     margin: 2.1rem 0 2rem;
+    color: black;
+    border: 1px solid black;
   }
 }
 /* -----------------------------------FAVOURITES---------------------------------- */
