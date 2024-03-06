@@ -1,0 +1,1885 @@
+@charset "UTF-8";
+.btn.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.375rem;
+  height: 4rem;
+  background-color: #ffffff;
+  color: #111111;
+  border: 1px solid #111111;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "PR", sans-serif;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.btn.primary:hover {
+  background-color: #333333;
+  color: white;
+  border-color: #ffffff;
+}
+
+@font-face {
+  font-family: "PR";
+  src: url("../assets/fonts/lp/lenorapremium_regular.eot");
+  src: url("../assets/fonts/pr/proximanova_regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/pr/proximanova_regular.woff") format("woff"), url("../assets/fonts/pr/proximanova_regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LP";
+  src: url("../assets/fonts/lp/lenorapremium_regular.eot");
+  src: url("../assets/fonts/lp/lenorapremium_regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/lp/lenorapremium_regular.woff") format("woff"), url("../assets/fonts/lp/lenorapremium_regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "PR", sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* -----------------------------------HEADER-------------------------------------- */
+.header-top {
+  background-color: #404759;
+}
+
+.header-top__wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header-top__menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 46px;
+}
+
+.header-top__link {
+  color: #ffffff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.header-main__link {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.header-main__menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.dropdown-divider__header {
+  display: flex;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid black;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.header-main768 {
+  display: none;
+}
+
+.burger-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.burger {
+  position: relative;
+  z-index: 6;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: none;
+  background: transparent;
+  width: 16px;
+  height: 13px;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-radius: 10px;
+  background: #000;
+}
+
+.burger::before {
+  top: 0;
+  box-shadow: 0 6px 0 #000;
+  transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+}
+
+.burger::after {
+  bottom: 0;
+  transition: bottom 0.3s 0.15s, transform 0.3s;
+}
+
+.burger-checkbox:checked + .burger::before {
+  top: 6px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 0 rgba(255, 255, 255, 0);
+  transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+}
+
+.burger-checkbox:checked + .burger::after {
+  bottom: 5.5px;
+  transform: rotate(-45deg);
+  transition: bottom 0.3s, transform 0.3s 0.15s;
+}
+
+.menu-list {
+  top: 24px;
+  left: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  padding: 42px 56px;
+  margin: 0;
+  background: white;
+  list-style-type: none;
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+
+.header__company-link {
+  display: block;
+  padding: 8px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header__company-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.burger-checkbox:checked ~ .menu-list {
+  transform: translateX(0);
+}
+
+.menu {
+  display: flex;
+  margin-bottom: 15px;
+  width: 100%;
+  align-items: center;
+  padding: 0 56px;
+}
+
+.header-main__img {
+  text-align: center;
+  width: 100%;
+}
+
+.header-main__tel {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .header-main {
+    display: none;
+  }
+  .header-main768 {
+    display: flex;
+  }
+}
+@media (max-width: 767px) {
+  .header-main {
+    display: none;
+  }
+  .header-main768 {
+    display: flex;
+  }
+  .header-main__tel {
+    display: flex;
+  }
+  .header-top__item:last-child {
+    display: none;
+  }
+  .header-top__item:first-child {
+    display: none;
+  }
+  .header-top__item {
+    margin: 0 auto;
+  }
+}
+.header-banner {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 65px;
+}
+.header-banner img {
+  max-width: 100%;
+  height: auto;
+}
+.header-banner .box-header-banner {
+  top: 104px;
+  left: 56px;
+  max-width: 424px;
+  position: absolute;
+}
+.header-banner__title {
+  font-size: 3.75rem;
+  line-height: 1.06;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+.header-banner__text {
+  font-size: 1.25rem;
+  margin: 0.875rem 0 1.625rem;
+  line-height: 1.2;
+  color: #ffffff;
+}
+.header-banner .btn.primary {
+  background-color: transparent;
+  color: black;
+  border: 1px solid #ffffff;
+}
+
+@media (max-width: 1280px) {
+  .header-banner .box-header-banner {
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 530px;
+  }
+  .header-banner__title {
+    font-size: 80px;
+  }
+  .header-banner__text {
+    font-size: 22px;
+    max-width: 450px;
+    margin: 1.375rem 0 3.4375rem;
+  }
+  .header-banner .btn.primary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+}
+@media (max-width: 768px) {
+  .header-banner {
+    position: static;
+  }
+  .header-banner img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: right top;
+       object-position: right top;
+  }
+  .header-banner .box-header-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    transform: translateY(0);
+    max-width: 100%;
+  }
+  .header-banner__title {
+    font-size: 28px;
+    text-align: center;
+    max-width: 300px;
+    color: #111111;
+    margin-top: 53px;
+  }
+  .header-banner__text {
+    font-size: 14px;
+    text-align: center;
+    max-width: 450px;
+    color: #111111;
+    margin: 1.9375rem 0 2.75rem;
+  }
+  .header-banner .btn.primary {
+    font-size: 12px;
+    color: #111111;
+    border: 1px solid #111111;
+    background-color: transparent;
+    max-width: 200px;
+    max-height: 48px;
+    margin: 0 17.75rem 4rem 17.75rem;
+    padding: 0 1.875rem 0 1.875rem;
+  }
+}
+@media (max-width: 320px) {
+  .header-banner {
+    position: static;
+  }
+  .header-banner img {
+    height: 300px;
+    width: 320px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: right;
+       object-position: right;
+  }
+  .header-banner .box-header-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    transform: translateY(0);
+    max-width: 100%;
+  }
+  .header-banner__title {
+    font-size: 28px;
+    text-align: center;
+    max-width: 264px;
+    color: #111111;
+    margin-top: 37px;
+  }
+  .header-banner__text {
+    font-size: 14px;
+    text-align: center;
+    max-width: 264px;
+    color: #111111;
+    margin: 0.9375rem 0 1.75rem;
+  }
+  .header-banner .btn.primary {
+    font-size: 12px;
+    color: #111111;
+    background-color: transparent;
+  }
+}
+/* -----------------------------------MAIN---------------------------------------- */
+/* ---------------------------------SHOP_BY--------------------------------------- */
+.shop_by {
+  padding: 3%;
+}
+
+.shop_by_name {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.rings_block {
+  margin: 2% 1%;
+}
+
+.rings_img2 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-left: auto;
+  margin-right: 50%;
+  margin-top: -18%;
+  left: 0;
+  right: 0;
+  align-items: center;
+}
+
+.rings_img1 {
+  margin-left: 14%;
+  margin-top: 4%;
+}
+
+.rings_text_block {
+  margin-top: 2%;
+}
+
+.rings_block_full {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .rings_img2 {
+    display: none;
+  }
+  .rings_block {
+    display: none;
+  }
+  .rings_block_full {
+    height: 500px;
+    text-align: center;
+    color: white;
+    display: block;
+    background-image: url(/assets/pic/rings/img3.png);
+    background-size: 100%;
+    padding: 50px;
+    background-repeat: no-repeat;
+    font-size: 1rem;
+  }
+  .rings_block_full h1 {
+    margin-bottom: 30px;
+  }
+  .rings_block_full a {
+    color: white;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+  }
+}
+@media (min-width: 500px) and (max-width: 767px) {
+  .rings_img2 {
+    display: none;
+  }
+  .rings_block {
+    display: none;
+  }
+  .rings_block_full {
+    height: 300px;
+    text-align: center;
+    color: white;
+    display: block;
+    background-image: url(/assets/pic/rings/img1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 30px;
+    font-size: 1rem;
+  }
+  .rings_block_full_title {
+    margin-bottom: 30px;
+  }
+  .rings_block_full a {
+    color: white;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+    margin-top: 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 499px) {
+  .rings_img2 {
+    display: none;
+  }
+  .rings_block {
+    display: none;
+  }
+  .rings_block_full {
+    height: 500px;
+    text-align: center;
+    color: white;
+    display: block;
+    background-image: url(/assets/pic/rings/img1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 10px;
+    font-size: 0.7rem;
+  }
+  .rings_block_full_title {
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+  .rings_block_full a {
+    color: white;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+    margin-top: 0;
+  }
+}
+/* -----------------------------------WHY_CHOOSE---------------------------------- */
+/* -----------------------------------QUOTE--------------------------------------- */
+/* -----------------------------------AS_SEEN------------------------------------- */
+@media (min-width: 1440px) {
+  .wedding_rings {
+    margin: 0 auto;
+    max-height: 41rem;
+  }
+  #div_1 {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+  }
+  #jumbotron {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 3%;
+  }
+  #view {
+    display: none;
+  }
+  #title_rings {
+    font-size: 60px;
+    font-weight: 400;
+    color: #111111;
+    max-width: 200px;
+    line-height: 64px;
+  }
+  #text_rings {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    max-width: 424px;
+  }
+  #rings_content {
+    position: relative;
+    max-width: 763px;
+  }
+  #rings_circle {
+    position: absolute;
+    top: 40%;
+    left: -20%;
+  }
+  .dropdown-divider {
+    display: flex;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .wedding_rings {
+    display: flex;
+    margin: 0 auto;
+    max-height: 44rem;
+  }
+  #div_1 {
+    display: flex;
+    flex-direction: column;
+  }
+  #jumbotron {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 3%;
+  }
+  #title_rings {
+    font-size: 60px;
+    font-weight: 400;
+    color: #111111;
+    max-width: 200px;
+    line-height: 64px;
+  }
+  #text_rings {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    max-width: 424px;
+  }
+  #rings_content {
+    position: relative;
+    max-width: 763px;
+  }
+  #rings_circle {
+    position: absolute;
+    top: 60%;
+    left: -15%;
+    width: 25%;
+  }
+  #add_card {
+    display: none;
+  }
+  .dropdown-divider {
+    display: flex;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .wedding_rings {
+    display: flex;
+    background-image: url(../assets/pic/wedding_rings/Wedding_Rings_768.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  #div_1 {
+    margin: 3%;
+  }
+  #title_rings {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: white;
+    max-width: 500px;
+    min-width: 450px;
+    line-height: 64px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #text_rings {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 528px;
+    min-width: 500px;
+  }
+  #rings_content {
+    display: none;
+  }
+  .btn_diamond {
+    margin: 0 auto;
+  }
+  #add_card {
+    display: none;
+  }
+  #lead {
+    display: flex;
+    justify-content: center;
+  }
+  .dropdown-divider {
+    display: flex;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1279px;
+  }
+  #view {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    color: white;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: "PR", sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  #view:hover {
+    background-color: white;
+    color: black;
+  }
+}
+@media (max-width: 767px) {
+  .wedding_rings {
+    display: flex;
+    background-image: url(../assets/pic/wedding_rings/Wedding_Rings_320.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    justify-content: center;
+    min-width: 320px;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  #jumbotron {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  #div_1 {
+    margin: 5%;
+  }
+  #title_rings {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: white;
+    max-width: 400px;
+    min-width: 350px;
+    line-height: 2rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #text_rings {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 264px;
+    padding-top: 3%;
+  }
+  #rings_content {
+    display: none;
+  }
+  .btn_diamond {
+    margin: 0 auto;
+  }
+  #add_card {
+    display: none;
+  }
+  #lead {
+    display: flex;
+    justify-content: center;
+  }
+  .dropdown-divider {
+    display: flex;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1279px;
+  }
+  #view {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 12.375rem;
+    color: white;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: "PR", sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  #view:hover {
+    background-color: white;
+    color: black;
+  }
+}
+@media (min-width: 1440px) {
+  .diamonds {
+    background-image: url(../assets/pic/diamonds/Guide_To_Diamonds.png);
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    max-width: 90rem;
+    max-height: 496px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .div_diamond_text {
+    max-width: 537px;
+    margin: 3%;
+  }
+  #title_diamonds {
+    font-size: 60px;
+    font-weight: 400;
+    color: #111111;
+    max-width: 578px;
+    line-height: 64px;
+    margin-top: 5%;
+  }
+  .text_diamond {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    max-width: 537px;
+  }
+  .btn_diamond {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.375rem;
+    height: 4rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: "PR", sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: 1rem;
+  }
+  .btn_diamond:hover {
+    background-color: #333333;
+    color: white;
+  }
+  .four_diamonds {
+    display: none;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .diamonds {
+    background-image: url("../assets/pic/diamonds/Guide_To_Diamonds_1280.png");
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    max-width: 89.9rem;
+    max-height: 640px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .div_diamond_text {
+    max-width: 840px;
+    margin: 5%;
+  }
+  #title_diamonds {
+    font-size: 3.75rem;
+    font-weight: 400;
+    color: #111111;
+    max-width: 578px;
+    line-height: 4rem;
+  }
+  .text_diamond {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+    max-width: 831px;
+  }
+  .btn_diamond {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.375rem;
+    height: 4rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: "PR", sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin: 2.125rem 0 4.5rem;
+  }
+  .btn_diamond:hover {
+    background-color: #333333;
+    color: white;
+  }
+  .four_diamonds {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .diamonds {
+    background-image: url("../assets/pic/diamonds/Guide_To_Diamonds_1280.png");
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    max-width: 80rem;
+    max-height: 640px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .div_diamond_text {
+    max-width: 840px;
+    margin: 5%;
+  }
+  #title_diamonds {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #111111;
+    max-width: 578px;
+    line-height: 2rem;
+  }
+  .text_diamond {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+    max-width: 831px;
+  }
+  .btn_diamond {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.375rem;
+    height: 4rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: "PR", sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin: 2.125rem 0 4.5rem;
+  }
+  .btn_diamond:hover {
+    background-color: #333333;
+    color: white;
+  }
+  .four_diamonds {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .diamonds2 {
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 767px;
+    max-height: 700px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5%;
+  }
+  .div_diamond_text {
+    width: 100%;
+  }
+  #title_diamonds {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: black;
+    max-width: 400px;
+    min-width: 350px;
+    line-height: 2rem;
+  }
+  .text_diamond {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem;
+    color: black;
+    max-width: 600px;
+  }
+  .btn_diamond {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.375rem;
+    height: 4rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: "PR", sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin: 2.125rem 0 1rem;
+  }
+  .btn_diamond:hover {
+    background-color: #333333;
+    color: white;
+  }
+  .dropdown-divider {
+    display: none;
+  }
+  .four_diamonds {
+    display: flex;
+    margin: 0;
+  }
+  .four_diamonds_picture {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1440px) {
+  .deamond_gia {
+    display: none;
+  }
+  .dropdown_divider_2 {
+    display: none;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .dropdown_divider_2 {
+    display: flex;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1439px;
+    opacity: 100;
+  }
+  #gia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 4%;
+  }
+  .gia_text {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+  }
+  #title_gia {
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  #text_gia_text {
+    color: #000;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem; /* 177.778% */
+    text-transform: capitalize;
+    max-width: 33.56rem;
+  }
+  .gia_content {
+    margin: 0 auto;
+  }
+  .img_gia {
+    width: 30.625rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .dropdown_divider_2 {
+    display: none;
+  }
+  #gia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 3%;
+  }
+  .gia_text {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+  }
+  #title_gia {
+    color: #000;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  #text_gia_text {
+    color: #000;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem; /* 177.778% */
+    text-transform: capitalize;
+    max-width: 19.625rem;
+  }
+  .gia_content {
+    margin: 0 auto;
+  }
+  .img_gia {
+    width: 19.625rem;
+  }
+}
+@media (max-width: 767px) {
+  .dropdown_divider_2 {
+    display: none;
+  }
+  #gia {
+    display: flex;
+    flex-direction: column;
+    margin: 4%;
+    justify-content: center;
+  }
+  .gia_text {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+  }
+  .img_gia {
+    min-width: 16.5rem;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+  .gia_content {
+    margin: 0 auto;
+  }
+  #title_gia {
+    color: #000;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  #text_gia_text {
+    color: #000;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem; /* 177.778% */
+    text-transform: capitalize;
+  }
+}
+/* -----------------------------------HEART--------------------------------------- */
+.heart {
+  margin-top: 5.25rem;
+  margin-bottom: 5.5rem;
+}
+
+.heart768 {
+  display: none;
+}
+
+.heart-tiitle {
+  font-size: 6.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 6rem;
+  margin: 0;
+}
+
+.heart-text {
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.heart-img {
+  margin-top: 6rem;
+  margin-bottom: 7.25rem;
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .heart-tiitle {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+  .heart-img {
+    margin-bottom: 6.25rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .heart {
+    margin: 3rem 0 4rem;
+  }
+  .heart1440 {
+    display: none;
+  }
+  .heart768 {
+    display: flex;
+  }
+  .heart-tiitle {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
+  .heart-text {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+  .heart-img {
+    margin: 0 0 2.5rem;
+  }
+  .heart-img__768 {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 256px;
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .heart {
+    margin: 2.25rem 0 2.25rem;
+  }
+  .heart1440 {
+    display: none;
+  }
+  .heart768 {
+    display: flex;
+  }
+  .heart-tiitle {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .heart-text {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+  .heart-img {
+    margin: 0 0 2.5rem;
+  }
+  .heart-img__768 {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 256px;
+    width: 100%;
+  }
+  .heart-img__320 {
+    margin: 0 0 2.5rem;
+  }
+  .order:first-child {
+    order: 0;
+  }
+  .order:nth-child(2) {
+    order: 0;
+  }
+  .order:nth-child(3) {
+    order: 1;
+  }
+  .order:nth-child(4) {
+    order: 0;
+  }
+  .order:nth-child(5) {
+    order: 1;
+  }
+  .order:last-child {
+    order: 1;
+  }
+}
+/* -----------------------------------INVITATION---------------------------------- */
+.invitation {
+  background-image: url(../assets/pic/invitation/U2A25461.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.invitation-tittle {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  padding: 77px 0 17px;
+}
+
+.invitation-text {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.invitation-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.375rem;
+  height: 4rem;
+  color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-family: "PR", sans-serif;
+  text-transform: uppercase;
+  line-height: normal;
+  letter-spacing: 0.28px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin: 2.125rem 0 4.5rem;
+}
+
+.invitation-btn:hover {
+  background-color: rgba(51, 51, 51, 0.5254901961);
+  color: white;
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .invitation-tittle {
+    padding: 96.25px 0 21.25px;
+  }
+  .invitation-btn {
+    margin: 3.25rem 0 6rem;
+    width: 11rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .invitation-tittle {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    padding: 53px 0 17px;
+  }
+  .invitation-text {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+  .invitation-btn {
+    width: 12.5rem;
+    height: 3rem;
+    font-size: 0.75rem;
+    margin: 2.125rem 0 5rem;
+    letter-spacing: 0.24px;
+  }
+}
+@media (max-width: 767px) {
+  .invitation-tittle {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    padding: 53px 0 17px;
+  }
+  .invitation-text {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+  .invitation-btn {
+    height: 3rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.24px;
+    width: 12.1275rem;
+    margin: 2.1rem 0 2rem;
+  }
+}
+/* -----------------------------------FAVOURITES---------------------------------- */
+.favourites {
+  margin: 3.75rem 0 9.75rem;
+}
+
+.favourites-tittle {
+  color: #000;
+  text-align: center;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.5rem;
+  text-transform: capitalize;
+  margin-bottom: 7rem;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card {
+  margin: 0 0.5em;
+  border: none;
+  border-radius: 0;
+}
+
+.card-text {
+  display: flex;
+  justify-content: center;
+  color: #111111;
+  text-align: center;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem;
+  text-transform: capitalize;
+}
+
+.carousel-inner {
+  padding: 1em;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.favourites-card {
+  width: 18rem;
+}
+
+.favourites-card__img {
+  width: 18rem;
+}
+
+.favourites320 {
+  display: none;
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .favourites {
+    margin: 5.75rem 0 7.75rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .favourites {
+    margin: 3.125rem 0 7.75rem;
+  }
+  .favourites-tittle {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+  .favourites-card {
+    width: 12.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .favourites1440 {
+    display: none;
+  }
+  .favourites320 {
+    display: block;
+  }
+  .favourites-card {
+    margin: 0 auto;
+  }
+  .favourites {
+    margin: 1.25rem 0 2rem;
+  }
+  .favourites-tittle {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    margin-bottom: 3rem;
+  }
+  .card {
+    margin: 0 auto;
+  }
+  .card-text {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    text-transform: capitalize;
+  }
+}
+/* -----------------------------------STARS--------------------------------------- */
+/* -----------------------------------LEARN-SECTION-------------------------------------- */
+body {
+  color: #111111;
+  font-family: "PR", sans-serif;
+}
+
+.heading2 {
+  font-size: 40px;
+}
+
+.main-learn__text {
+  font-size: 18px;
+  font-family: "PR", sans-serif;
+  margin: 2rem 0 1.25rem 0;
+  color: #111111;
+  max-width: 19.375rem;
+}
+.main-learn__title {
+  font-size: 40px;
+  font-family: "PR", sans-serif;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  color: #111111;
+  max-width: 19.375rem;
+}
+
+.learn {
+  position: relative; /* Чтобы псевдоэлемент был позиционирован относительно этого контейнера */
+  padding: 3.75rem 0;
+  font-size: 40px;
+  background-size: contain;
+  overflow: hidden; /* Чтобы изображение не выходило за пределы контейнера */
+}
+
+.learn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 18.75rem;
+  background-image: url("../assets/pic/learn/Gradient.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1; /* Чтобы псевдоэлемент был "позади" основного содержимого */
+}
+
+/*-----------------MOBILE-VERSION-LEARN----------------------*/
+@media (max-width: 767px) {
+  .btn.primary {
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .btn.primary {
+    margin-bottom: 2rem;
+  }
+}
+/* -----------------------------------QUESTIONS-SECTION----------------------------------- */
+.questions {
+  background-image: url("../assets/pic/questions/questions_ring.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  border-top: 1px solid #111111;
+}
+
+/*-----------------ACCORDION----------------------*/
+.accordion-item {
+  /* Стили для всего элемента аккордеона */
+  background-color: rgba(255, 255, 255, 0.1); /* Прозрачный белый цвет фона */
+  margin-bottom: 2rem; /* Расстояние между элементами аккордеона */
+  border: 0.5px solid #111111;
+  border-radius: 8px;
+}
+
+.accordion-button {
+  /*  Общие стили для кнопки аккордеона */
+  background-color: transparent;
+  color: #111111;
+  border: 0.5px solid #111111;
+  border-radius: 8px;
+  box-shadow: 0px black;
+}
+
+.accordion-collapse {
+  /* Стили для контейнера развернутого содержимого аккордеона */
+  background-color: rgba(255, 255, 255, 0.1); /* Прозрачный белый цвет фона для текста */
+  border: 0.5px solid #f2f2f2;
+}
+
+.accordion-button:not(.collapsed) {
+  /* Стили для развернутого (открытого) состояния */
+  border-bottom: none;
+  background-color: transparent;
+  color: #111111;
+  box-shadow: 4px 4px 4px #d3d3d3;
+}
+
+.accordion-button.collapsed {
+  /* как должна выглядеть кнопка аккордеона, когда она свернута */
+  box-shadow: 0.5px 0.5px 0.5px 0.5px #111111;
+}
+
+.accordion-button:focus {
+  border-color: #111111;
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+  transform: scale(0.7) !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+}
+
+/*-----------------MOBILE-VERSION-QUESTIONS----------------------*/
+@media (max-width: 767px) {
+  .questions {
+    background-image: none; /* Убираем фоновую картинку */
+    background-color: #f2f2f2; /* Задаем серый цвет фона */
+  }
+  .accordion-item {
+    margin-bottom: 1rem; /* Расстояние между элементами аккордеона */
+  }
+  .accordion-button,
+  .accordion-item,
+  .card-body {
+    background-color: white;
+  }
+  .accordion-button,
+  .accordion-button.collapsed {
+    font-weight: 700;
+  }
+  .accordion-button {
+    font-weight: 600;
+  }
+  .accordion-button.collapsed {
+    font-weight: 600;
+  }
+  .accordion-button:not(.collapsed) {
+    font-weight: 600;
+  }
+  .extra-space {
+    background-color: #f2f2f2;
+  }
+}
+/* -----------------------------------WHAT_NEW------------------------------------ */
+.what_new {
+  position: relative;
+  padding: 3.75rem 0;
+  background-size: contain;
+  font-family: "PR", sans-serif;
+  overflow: hidden;
+}
+.what_new__text-title {
+  font-size: 2.5rem;
+  color: white;
+  padding-bottom: 2.75rem;
+}
+.what_new__img {
+  background-repeat: no-repeat;
+}
+.what_new img {
+  margin-bottom: 1.56rem;
+}
+.what_new__title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: #111111;
+  margin-bottom: 1.56rem;
+  text-transform: capitalize;
+}
+.what_new__text {
+  font-size: 1.125rem;
+  color: #111111;
+  max-width: 26.5rem;
+  height: 4.25rem;
+  margin-bottom: 3rem;
+}
+.what_new__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.375rem;
+  height: 4rem;
+  background-color: #ffffff;
+  color: #111111;
+  border: 1px solid #111111;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "PR", sans-serif;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 5.5rem;
+}
+.what_new__button:hover {
+  background-color: #333333;
+  color: white;
+  border-color: #ffffff;
+}
+
+/*-----------------1280-VERSION-WHAT_NEW----------------------*/
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .what_new__title {
+    width: 23.1875rem;
+    height: 6rem;
+  }
+  .what_new__text {
+    width: 23.1875rem;
+    height: 7rem;
+  }
+}
+.what_new::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 18.75rem;
+  background-repeat: no-repeat;
+  background-image: url("../assets/pic/learn/Gradient.png");
+  background-size: cover;
+  z-index: -1;
+}
+
+/*-----------------768-VERSION-WHAT_NEW----------------------*/
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .what_new {
+    background-size: 100%;
+  }
+  .what_new__text-title {
+    padding-bottom: 1rem;
+  }
+}
+/*-----------------320-VERSION-WHAT_NEW----------------------*/
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .what_new {
+    background-size: 100%;
+  }
+  .what_new__text-title {
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+}
+/* -----------------------------------INSTAGRAM----------------------------------- */
+.instagram {
+  padding: 3.75rem 0 4rem 0;
+  background-image: url(../assets/pic/instagram/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.instagram__title {
+  padding: 0 0 3.75rem 0;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/*-----------------768-VERSION-INSTAGRAM----------------------*/
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .instagram {
+    background-size: cover;
+  }
+}
+/*-----------------320-VERSION-INSTAGRAM----------------------*/
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .instagram {
+    background-size: cover;
+  }
+}
+.footer {
+  padding: 3.25rem 0 0 0;
+  height: 19rem;
+  background-image: url(../assets/pic/footer/Gradient.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.footer__title {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  font-style: normal;
+  color: #f2f2f2;
+  height: 2rem;
+}
+.footer__text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: #f2f2f2;
+  height: 8.75rem;
+}
+.footer__email {
+  margin-top: 0.5rem;
+  width: 15rem;
+  height: 3rem;
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+  background: #fbfbfb;
+  color: #111111;
+  padding: 0 2rem 0 1.25rem;
+}
+.footer__button-subscribe {
+  width: 15rem;
+  height: 3rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  background: #404759;
+  color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  text-align: start;
+  padding: 0 2rem 0 1.25rem;
+}
+.footer__button-subscribe:hover {
+  background-color: #2c313d;
+}
+.footer__company {
+  margin-left: 5rem;
+}
+.footer__company-link {
+  text-decoration: none;
+  color: #f2f2f2;
+  font-style: normal;
+  line-height: 16px;
+}
+.footer__company-link:hover {
+  color: #707070;
+}
+.footer ul {
+  padding-left: 0;
+}
+.footer li {
+  list-style-type: none;
+}
+.footer__back-to-top {
+  padding-left: 7rem;
+}
+.footer__back-to-top__icon {
+  margin-left: 4rem;
+}
+
+/*-----------------1280-VERSION-INSTAGRAM----------------------*/
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .footer {
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 998px) and (max-width: 1278px) {
+  #footer__back-to-top {
+    order: 5;
+  }
+}
+/*-----------------768-VERSION-INSTAGRAM----------------------*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer {
+    height: 428px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .footer {
+    background-size: cover;
+  }
+  .footer__title {
+    margin-bottom: 1rem;
+  }
+  .footer__email {
+    width: 11.5rem;
+  }
+  .footer__button-subscribe {
+    width: 11.5rem;
+  }
+  .footer__back-to-top {
+    padding-left: 2rem;
+  }
+  #footer__block-opening {
+    order: 5;
+  }
+}
+/*-----------------320-VERSION-INSTAGRAM----------------------*/
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .footer {
+    height: 47.5rem;
+    background-size: cover;
+  }
+  .footer__title {
+    margin-bottom: 1.6rem;
+    font-size: 1.3rem;
+  }
+  .footer__text {
+    width: 19rem;
+    height: 6.25rem;
+    font-size: 1rem;
+  }
+  .footer__company {
+    margin: 6rem 0 0 0;
+  }
+  .footer__opening {
+    margin: 0;
+    padding: 0;
+  }
+  .footer__email {
+    width: 16.5rem;
+  }
+  .footer__button-subscribe {
+    width: 16.5rem;
+  }
+  .footer__back-to-top {
+    padding: 0;
+  }
+  .footer__back-to-top__icon {
+    margin: 0;
+    padding: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
